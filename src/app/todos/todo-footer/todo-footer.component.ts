@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { filtrosValidos } from '../../filtro/filtro.actions';
 import { AppState } from '../../app.reducer';
 import * as actions from '../../filtro/filtro.actions';
+import { limpiarTodos } from '../todo.actions';
 
 @Component({
   selector: 'app-todo-footer',
@@ -30,6 +31,10 @@ export class TodoFooterComponent implements OnInit {
 
   cambiarFiltro(filtro: actions.filtrosValidos) {
     this.store.dispatch(actions.setFiltro({ filtro }));
+  }
+
+  limpiarTodos() {
+    this.store.dispatch(limpiarTodos());
   }
 
 }
